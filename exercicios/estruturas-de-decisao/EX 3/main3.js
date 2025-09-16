@@ -1,10 +1,10 @@
-senha_previa= 'São Paulo'
-let senha_digitada = prompt('Digite a sua senha: ');
-if (senha_digitada == senha_previa)
-    {
-        console.log('Você digitou a senha correta')
-    }
-else
-    {
-    console.log('Você NÃO digitou a senha correta')
-    };
+let x = prompt('Insira um número');
+
+console.log(typeof x);
+
+// Conversão forçada de tipo
+if ( x > 532 && x < 743 ) {
+	console.log('O número está entre 532 e 743');
+} else {
+	console.log('O número não está entre 532 e 743');
+}

@@ -1,32 +1,24 @@
-m_experiencia = prompt('Digite os anos de experiência: ');
-m_formacao    = prompt('Qual sua formação digite (1) superior, (2) pós, (3) metradao (4) doutorado');
+let experiencia = prompt('Insira a sua experiência como professor');
+let pontuacao = 0;
 
-m_pontos = 0; 
+if ( experiencia < 5 ) {
+	pontuacao = pontuacao + 10; // Expressão
+} else if ( experiencia >= 5 ) {
+	pontuacao = pontuacao + 20;
+}
 
-m_experiencia = (m_experiencia);
-m_formacao = (m_formacao);
-if (m_experiencia < 5)
-    {
-        m_pontos = m_pontos + 10
-    };
-if (m_experiencia >= 5)
-    {
-        m_pontos = m_pontos + 20
-    };
+let formacao = prompt('Insira a sua formação acadêmica');
 
-if (m_formacao == 1)
-    {
-        m_pontos = m_pontos + 10
-    };
-if (m_formacao == 2)
-    {
-        m_pontos = m_pontos + 20
-    };
-if (m_formacao == 3)
-    {
-        m_pontos = m_pontos + 30
-    };
-if (m_formacao == 4)
-    {
-        m_pontos = m_pontos + 40
-    };
+if ( formacao == 'graduação' ) {
+	// pontuacao = pontuacao + 10;
+	pontuacao += 10;
+} else if ( formacao == 'especialização' ) {
+	pontuacao += 20;
+} else if ( formacao == 'mestrado' ) {
+	pontuacao += 30;
+} else if ( formacao == 'doutorado' ) {
+	pontuacao += 40;
+}
+
+console.log(`A sua pontuação final é: ${pontuacao}`); // Interpolar variável com string
+// console.log('A sua pontuação final é:' + pontuacao); // Concatenação de variável com string
