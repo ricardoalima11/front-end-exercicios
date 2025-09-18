@@ -1,5 +1,7 @@
-let password = 'gol' ;
+let senha = 'gol';
+let senhaDoUsuario;
+
 do {
-    pass = prompt('Por favor, digite a senha:');
-    } while (password != pass); 
+    senhaDoUsuario = prompt('Por favor, digite a senha:');
+    } while (senha != senhaDoUsuario); 
     console.log('Senha Correta, Parabéns!');
