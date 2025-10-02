@@ -1,44 +1,43 @@
-const botao = document.getElementById('btn-adicionar');
-const input = document.querySelector('#novo-item');
-const lista = document.querySelector('#nomes-pessoa');
+// Constantes
+const botao   = document.getElementById('btn-adicionar');
+const item    = document.querySelector('#novo-item');
+const pessoa  = document.querySelector('#nome-pessoa');
 
 const listaDeItens = document.querySelector('.itens');
 
-function addArtista() {
-	if ( item.value == '') {
+// Funções
+function adicionaItem() {
+	if ( item.value == '' ) {
 		alert('Preencha o campo item');
-		} else {
-			
-			// Div (Elemento Mãe)
-			let novoItem = document.createElement('div');
+	} else {
+		// Div (elemento mãe)
+		let novoItem = document.createElement('div');
+		
+		// Elementos filhos
+		novoItem.innerHTML = `
+			<h3 class="item">${item.value}</h3>
+			<p class="pessoa"></p>
+			<button class="trazer">Eu trago!</button>
+		`;
 
-			//Elementos Filhos
-			novoItem.innerHTML = `
-				<h3 class="item">${item.value}</h3>
-			 	<p class="pessoa"></p>
-				<button class="trarei">Eu Trago!</button>
-				
-			
-			`;
+		// Adiciona elemento na página como filho de listaDeItens
+		listaDeItens.appendChild(novoItem);
 
-
-			// Adiciona elemento na página como filho de listaDeItens
-			 listaDeItens.appendChild(novoItem);
-
-			 // Adicionar evento ao botão de voluntariar-se
-			 const botaoTrazer = listaDeItens.querySelector('.trazer');
-			botaoTrazer.onclick
-		}
+		// Adicionar evento ao botão de voluntariar-se
+		const botaoTrazer = novoItem.querySelector('.trazer');
+		botaoTrazer.onclick = trazerItem;
+	}
 }
- function.trazerItem(evento) {
+
+function trazerItem(evento) {
 	let botaoClicado = evento.target;
 	let divDoItem = botaoClicado.parentNode;
 
 	let paragrafo = divDoItem.querySelector('.pessoa');
 
-	paragrafo.innerText = pessoa.value
+	paragrafo.innerText = pessoa.value;
+}
 
-	//console.log('EuTrago!');
- }
-//Eventos
+
+// Eventos
 botao.onclick = adicionaItem;
