@@ -1,145 +1,113 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    background-color: #f0f2f5;
+    color: #333;
     margin: 0;
+    padding: 20px;
 }
 
 .container {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 600px;
 }
 
-h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+h1, h2 {
+    color: #0056b3;
 }
 
-.input-section {
+.input-grupo {
     display: flex;
-    flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
 }
 
-.add-item {
-    display: flex;
-    gap: 10px;
-}
-
-#item-input, #name-input {
-    flex: 1;
+.input-grupo input {
+    flex-grow: 1;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 4px;
 }
 
-button {
+.input-grupo button {
     padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+    background-color: #007bff;
     color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-#add-btn {
-    background-color: #5cb85c;
+.input-grupo button:hover {
+    background-color: #0056b3;
 }
 
-#add-btn:hover {
-    background-color: #4cae4c;
-}
-
-.item-list-container {
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-}
-
-#item-list {
+#lista-itens {
     list-style: none;
     padding: 0;
 }
 
-.list-item {
+.item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #fafafa;
+    transition: background-color 0.3s;
 }
 
-.list-item:last-child {
-    border-bottom: none;
+.item.reservado {
+    background-color: #e9f5ff;
+    border-left: 5px solid #007bff;
 }
 
-.item-details {
-    flex: 1;
+.item-texto {
+    flex-grow: 1;
 }
 
-.item-name {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.volunteer-info {
-    font-size: 14px;
-    color: #777;
-    margin-top: 5px;
-}
-
-.volunteer-actions {
+.item-botoes {
     display: flex;
     gap: 5px;
 }
 
-.volunteer-btn, .cancel-btn {
-    padding: 8px 12px;
+.item-botoes button {
+    padding: 5px 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 14px;
-    color: #fff;
 }
 
-.volunteer-btn {
-    background-color: #0275d8;
+.btn-voluntariar {
+    background-color: #28a745;
+    color: white;
 }
 
-.volunteer-btn:hover {
-    background-color: #025aa5;
+.btn-voluntariar:hover {
+    background-color: #218838;
 }
 
-.cancel-btn {
-    background-color: #d9534f;
-    display: none; /* Inicia escondido */
+.btn-cancelar {
+    background-color: #dc3545;
+    color: white;
 }
 
-.cancel-btn:hover {
-    background-color: #c9302c;
+.btn-cancelar:hover {
+    background-color: #c82333;
 }
 
-.counter {
-    text-align: right;
-    margin-top: 20px;
-    font-size: 16px;
-    font-weight: bold;
+.item-reservado-por {
+    margin-left: 10px;
+    font-size: 0.9em;
     color: #555;
 }
 
-.reserved .volunteer-btn {
+.escondido {
     display: none;
-}
-
-.reserved .cancel-btn {
-    display: inline-block;
 }
